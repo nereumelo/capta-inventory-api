@@ -1,0 +1,200 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Capta Estoque API",
+        "version": "1.0.0"
+    },
+    "components": {
+        "schemas": {}
+    },
+    "paths": {
+        "/v1/availability/check": {
+            "get": {
+                "operationId": "checkAvailability",
+                "summary": "Check Product Availability",
+                "tags": [
+                    "Availability"
+                ],
+                "description": "Check Product Availability by Product Code",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "productCode",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "category",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "productCode": {
+                                            "type": "string"
+                                        },
+                                        "available": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "productCode",
+                                        "available"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/commitment/create": {
+            "post": {
+                "operationId": "commitmentCreate",
+                "summary": "Create Commitment",
+                "tags": [
+                    "Commitment"
+                ],
+                "description": "Create Commitment",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "productCode",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "productCode": {
+                                            "type": "string"
+                                        },
+                                        "available": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "productCode",
+                                        "available"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/commitment/update": {
+            "put": {
+                "operationId": "commitmentUpdate",
+                "summary": "Update Commitment",
+                "tags": [
+                    "Commitment"
+                ],
+                "description": "Update Commitment",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "productCode",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "productCode": {
+                                            "type": "string"
+                                        },
+                                        "available": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "productCode",
+                                        "available"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/commitment/release": {
+            "put": {
+                "operationId": "commitmentRelease",
+                "summary": "Release Commitment",
+                "tags": [
+                    "Commitment"
+                ],
+                "description": "Release Commitment when order is aborted",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "productCode",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "productCode": {
+                                            "type": "string"
+                                        },
+                                        "available": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "productCode",
+                                        "available"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
