@@ -24,14 +24,6 @@
                         "in": "query",
                         "name": "productCode",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string"
-                        },
-                        "in": "query",
-                        "name": "category",
-                        "required": true
                     }
                 ],
                 "responses": {

@@ -7,7 +7,7 @@ const schemas = {
         operationId: 'checkAvailability',
         summary: 'Check Product Availability',
         description: 'Check Product Availability by Product Code',
-        querystring: z.object({ productCode: z.string(), category: z.string() }),
+        querystring: z.object({ productCode: z.string() }),
         tags: ['Availability'],
         response: {
             200: z.object({ productCode: z.string(), available: z.boolean() }),
