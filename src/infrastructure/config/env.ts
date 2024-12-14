@@ -1,10 +1,14 @@
 import { createEnv } from "@t3-oss/env-core";
-import { z, ZodError } from "zod";
+import { z } from "zod";
  
 export const env = createEnv({
   server: {
     APP_PORT: z.coerce.number().default(3000),
-    APP_HOST: z.string().default("localhost"),
+    DB_HOST: z.string(),
+    DB_PORT: z.coerce.number().default(1521),
+    DB_NAME: z.string(),
+    DB_USER: z.string(),
+    DB_PASSWORD: z.string(),
   },
   runtimeEnv: process.env,
 });

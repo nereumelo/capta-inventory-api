@@ -24,6 +24,14 @@
                         "in": "query",
                         "name": "productCode",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "name": "distributionCenter",
+                        "required": true
                     }
                 ],
                 "responses": {
