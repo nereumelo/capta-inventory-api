@@ -1,3 +1,5 @@
+import Availability from "@core/availability/infra/typeorm/entities/availability";
+
 export default interface AvailabilityRepository {
-    check: (materialCode: number, distributionCenterCode: number | undefined) => Promise<{ materialCode: number, available: boolean }>
+    getStockInfo: (materialCode: number, distributionCenterCode: number | undefined) => Promise<Availability>
 }
