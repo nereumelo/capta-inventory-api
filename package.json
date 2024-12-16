@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch --env-file=.env src/infrastructure/http/server.ts",
-    "dev:db": "tsx --watch --env-file=.env ./src/query.ts",
-    "dev:orm": "tsx --watch --env-file=.env ./src/query-orm.ts"
+    "dev": "node --env-file=.env --watch -r ts-node/register ./src/shared/infra/http/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,20 +12,23 @@
   "dependencies": {
     "@fastify/swagger": "^9.4.0",
     "@scalar/fastify-api-reference": "^1.25.75",
-    "@t3-oss/env-core": "^0.11.1",
+    "@t3-oss/env-core": "0.8.0",
     "fastify": "^5.1.0",
     "fastify-plugin": "^5.0.1",
     "fastify-type-provider-zod": "^4.0.2",
-    "inversify": "^6.2.0",
     "oracledb": "^6.7.0",
     "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0",
     "typeorm": "^0.3.20",
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@swc/core": "^1.10.1",
+    "@swc/wasm": "^1.10.1",
     "@types/node": "^22.10.1",
     "@types/oracledb": "^6.5.2",
-    "tsx": "^4.19.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.2"
   }
 }

@@ -1,0 +1,65 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Capta Estoque API",
+        "version": "1.0.0"
+    },
+    "components": {
+        "schemas": {}
+    },
+    "paths": {
+        "/v1/availability/check": {
+            "get": {
+                "operationId": "checkAvailability",
+                "summary": "Check Product Availability",
+                "tags": [
+                    "Availability"
+                ],
+                "description": "Check Product Availability by Product Code",
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "number"
+                        },
+                        "in": "query",
+                        "name": "materialCode",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "number"
+                        },
+                        "in": "query",
+                        "name": "distributionCenterCode",
+                        "required": false
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Default Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "materialCode": {
+                                            "type": "number"
+                                        },
+                                        "available": {
+                                            "type": "boolean"
+                                        }
+                                    },
+                                    "required": [
+                                        "materialCode",
+                                        "available"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
