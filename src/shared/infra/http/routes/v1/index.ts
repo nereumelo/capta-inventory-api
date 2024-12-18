@@ -2,5 +2,5 @@ import AvailabilityRouter from "@core/availability/infra/http/routes/availabilit
 import { ZodTypedFastifyAsyncPlugin } from "@http/types/zod-fastify";
 
 export const v1Routes: ZodTypedFastifyAsyncPlugin = async (app) => {
-    app.register(AvailabilityRouter.setup, { prefix: '/availability' },);
+  app.register(AvailabilityRouter.setup, { prefix: "/availability" });
 };

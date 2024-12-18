@@ -1,4 +1,4 @@
-import { FastifyPluginAsyncZod, ZodTypeProvider } from "fastify-type-provider-zod";
+import { ZodTypeProvider } from "fastify-type-provider-zod";
 import {
   FastifySchema,
   FastifyRequest,
@@ -9,19 +9,19 @@ import {
   RawReplyDefaultExpression,
   ContextConfigDefault,
   FastifyInstance,
-  FastifyPluginOptions
+  FastifyPluginOptions,
 } from "fastify";
-import { DataSource } from "typeorm";
 
-type InstanceDecorators = {}
+type InstanceDecorators = {};
 
-type ZodTypedFastifyInstance = InstanceDecorators & FastifyInstance<
-  Server<typeof IncomingMessage, typeof ServerResponse>,
-  IncomingMessage,
-  ServerResponse<IncomingMessage>,
-  FastifyBaseLogger,
-  ZodTypeProvider,
->;
+type ZodTypedFastifyInstance = InstanceDecorators &
+  FastifyInstance<
+    Server<typeof IncomingMessage, typeof ServerResponse>,
+    IncomingMessage,
+    ServerResponse<IncomingMessage>,
+    FastifyBaseLogger,
+    ZodTypeProvider
+  >;
 
 type ZodTypedFastifyRequest<TSchema extends FastifySchema> = FastifyRequest<
   RouteGenericInterface,
@@ -39,15 +39,15 @@ type ZodTypedFastifyReply<TSchema extends FastifySchema> = FastifyReply<
   ContextConfigDefault,
   TSchema,
   ZodTypeProvider
->
+>;
 
 type ZodTypedFastifyFunction<TSchema extends FastifySchema> = (
-    this: ZodTypedFastifyInstance,
-    request: ZodTypedFastifyRequest<TSchema>,
-    reply: ZodTypedFastifyReply<TSchema>
+  this: ZodTypedFastifyInstance,
+  request: ZodTypedFastifyRequest<TSchema>,
+  reply: ZodTypedFastifyReply<TSchema>,
 ) => Promise<void>;
 
 type ZodTypedFastifyAsyncPlugin = (
   app: ZodTypedFastifyInstance,
-  options?: FastifyPluginOptions
+  options?: FastifyPluginOptions,
 ) => Promise<void>;

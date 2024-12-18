@@ -3,25 +3,31 @@ import CheckAvailabilityService from "@core/availability/services/check-availabi
 import { ZodTypedFastifyFunction } from "@http/types/zod-fastify";
 import { container } from "tsyringe";
 
-type CheckAvailabilitySchema = typeof AvailabilityRouter.schemas.checkAvailability;
+type CheckAvailabilitySchema =
+  typeof AvailabilityRouter.schemas.checkAvailability;
 
 class AvailabilityController {
-    check: ZodTypedFastifyFunction<CheckAvailabilitySchema> = async function (req, res) {
-        try {
-            const { materialCode, distributionCenterCode } = req.query;
+  check: ZodTypedFastifyFunction<CheckAvailabilitySchema> = async function (
+    req,
+    res,
+  ) {
+    try {
+      const { materialCode, distributionCenterCode } = req.query;
 
-            const checkAvailabilityService = container.resolve(CheckAvailabilityService);
+      const checkAvailabilityService = container.resolve(
+        CheckAvailabilityService,
+      );
 
-            const result = await checkAvailabilityService.execute({
-                materialCode,
-                distributionCenterCode,
-            });
+      const result = await checkAvailabilityService.execute({
+        materialCode,
+        distributionCenterCode,
+      });
 
-            return res.send(result);
-        } catch (error) {
-            console.log(error);
-        }
+      return res.send(result);
+    } catch (error) {
+      console.log(error);
     }
+  };
 }
 
 export default AvailabilityController;

@@ -35,6 +35,8 @@
       "@otel/*": ["./src/shared/infra/otel/*"],
     }
   },
+  "include": ["src/**/*.ts"],
+  "exclude": ["test/**/*.spec.ts"],
   "ts-node": {
     "swc": true,
     "require": ["tsconfig-paths/register"]
