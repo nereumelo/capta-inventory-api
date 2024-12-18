@@ -28,6 +28,8 @@
       "@core/*": ["./src/core/*"],
       "@config/*": ["./src/shared/config/*"],
       "@container": ["./src/shared/container"],
+      "@container/*": ["./src/shared/container/*"],
+      "@logger": ["./src/shared/infra/logger"],
       "@http/*": ["./src/shared/infra/http/*"],
       "@db/*": ["./src/shared/infra/database/*"],
       "@otel/*": ["./src/shared/infra/otel/*"],

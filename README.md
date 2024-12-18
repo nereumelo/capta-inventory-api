@@ -23,6 +23,7 @@ Ensure your `.env` file includes the following environment variables:
 | **DB_NAME**     | true     |         | The service name (or SID) of the database to connect to.     |
 | **DB_USER**     | true     |         | The username for authenticating with the database.           |
 | **DB_PASSWORD** | true     |         | The password for authenticating with the database.           |
+| **LOG_LEVEL**   | false    | error   | Defines the verbosity of application logs.                   |
 
 
 ## Run Locally

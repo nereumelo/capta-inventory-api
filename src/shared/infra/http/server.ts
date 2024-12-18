@@ -10,10 +10,9 @@ async function start() {
         AppDataSource.initialize(),
     ]);
     
-    app.listen({ port }, () => {
-        console.log(`🚀 Server is up and running at: http://localhost:${port}\n`);
-        console.log(`📚 Explore the API documentation here: http://localhost:${port}/docs`);
-    });
+    await app.listen({ port });
+    // app.log.info(`🚀 Server is up and running at: http://localhost:${port}`);
+    // app.log.info(`📚 Explore the API documentation here: http://localhost:${port}/docs`);
 }
 
 start();

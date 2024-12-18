@@ -1,7 +1,7 @@
 import "reflect-metadata";
+import { DataSource } from "typeorm";
 import { env } from "@config/env";
 import Availability from "@core/availability/infra/typeorm/entities/availability";
-import { DataSource } from "typeorm";
 
 const AppDataSource = new DataSource({
     type: "oracle",
